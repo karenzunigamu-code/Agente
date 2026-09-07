@@ -51,8 +51,8 @@ def consultar_horario(consulta: str) -> list[Clase]:
         if criterio in clase.get("dia", "").lower()
         or criterio in clase.get("asignatura", "").lower()
     ]
-
-return {
+    
+    return {
         "consulta": consulta,
         "resultados": resultados,
         "cantidad": len(resultados)
