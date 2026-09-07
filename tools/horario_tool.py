@@ -44,15 +44,15 @@ def consultar_horario(consulta: str) -> list[Clase]:
         horarios: list[Clase] = json.load(archivo)
 
     criterio = consulta.lower().strip()
-
-resultados = [
+    
+    resultados = [
         clase
         for clase in horarios
         if criterio in clase.get("dia", "").lower()
         or criterio in clase.get("asignatura", "").lower()
     ]
 
-    return {
+return {
         "consulta": consulta,
         "resultados": resultados,
         "cantidad": len(resultados)
